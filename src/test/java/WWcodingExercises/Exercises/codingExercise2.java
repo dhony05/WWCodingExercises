@@ -12,7 +12,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,7 +21,8 @@ import org.testng.Assert;
 public class codingExercise2 {
 	// Make WebDriver global to be accessible from the whole class 
 	static WebDriver driver; 
-	String driverPath = "/Users/donelysfamilia/Downloads/chromedriver"; /// set the path where your chromedriver is located
+	
+	String driverPath ="chromedriver"; /// set the path where your chromedriver is located
 	String driverN = "webdriver.chrome.driver";
 
 	
@@ -58,9 +58,7 @@ public class codingExercise2 {
 		String GetTitle2 = driver.getTitle();
 
 		// 4. Assert loaded page title contains “Find WW Studios & Meetings Near You | WW USA”
-		System.out.println(title2);
-		
-		System.out.println(GetTitle2);
+
 		Assert.assertTrue(GetTitle2.contains(title2));
 
 		
@@ -127,6 +125,7 @@ public class codingExercise2 {
 		// in case the input is the entire name
 		String dayOfWeek = inputDay.substring(0, 3).toUpperCase();
 		System.out.println("---------------------------------------- ");
+		// Create a map to store Agent name  as key and numbers of meetings as value
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		String[] infoDay;
 		int times = 0;
