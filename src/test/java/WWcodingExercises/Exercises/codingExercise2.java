@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.tools.ant.taskdefs.condition.Os;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -22,7 +23,7 @@ public class codingExercise2 {
 	// Make WebDriver global to be accessible from the whole class 
 	static WebDriver driver; 
 	
-	String driverPath ="chromedriver"; /// set the path where your chromedriver is located
+	String driverPath  = "chromedriver";; /// set the path where your chromedriver is located
 	String driverN = "webdriver.chrome.driver";
 
 	
@@ -32,10 +33,12 @@ public class codingExercise2 {
 	}
 
 	
+	
 
 	@Test
 	public void exercise() {
 
+		
 		// Setting up the driver
 		System.setProperty(driverN, driverPath);
 		driver = new ChromeDriver();
