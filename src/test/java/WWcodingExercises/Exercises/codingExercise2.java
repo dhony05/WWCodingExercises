@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.tools.ant.taskdefs.condition.Os;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -143,12 +143,12 @@ public class codingExercise2 {
 				infoDay = day.getText().split("\\r?\\n");
 				// Iterate through the info skipping the day name at position 0
 				for (int i = 1; i < infoDay.length; i++) {
-					// if start with a letter and is not in the map we add it.
+					// if start with a letter and if is not in the map we add it.
 					if (Character.isLetter(infoDay[i].charAt(0)) && (!map.containsKey(infoDay[i]))) {
-						times = 1;
+						times ++;
 						map.put(infoDay[i], times);
 					}
-					// if the name is in the map then increases the his/her value
+					// If the name is in the map then increases the his/her value
 					else if (map.containsKey(infoDay[i])) {
 						times = map.get(infoDay[i]);
 						times++;
